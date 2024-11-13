@@ -22,6 +22,10 @@ a {
     display: flex;
 }
 
+.space-between {
+    justify-content: space-between;
+}
+
 /* COMMON */
 /* Layout */
 
@@ -42,13 +46,13 @@ main {
     font-family: "Montserrat", sans-serif;
 }
 /* Intro Section*/
-.main-title,
+.title,
 .main-caption {
     text-align: center;
     padding-bottom: 20px;
 }
 
-.main-title {
+.title {
     color: #1a7feb;
 }
 
@@ -90,6 +94,33 @@ main {
     justify-content: space-around;
 }
 
+/* New Member */
+.new-member {
+    padding-top: 70px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.input {
+    flex-direction: column;
+    padding-bottom: 20px;
+    width: calc(50% - 40px);
+}
+
+.label {
+    padding-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #1a7feb;
+    color: #ffff;
+    font-size: 1rem;
+    padding: .8em 1em;
+    border: 1px solid #1a7feb;
+    border-radius: 10px;
+}
+
 
 /* RESPONSIVE LAYOUT */
 @media screen and (max-width: 1024px) {
@@ -113,5 +144,9 @@ main {
     
     .card a {
         font-size: 15px;
+    }
+
+    .input {
+        width: 100%;
     }
 }

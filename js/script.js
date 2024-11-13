@@ -39,6 +39,9 @@ const teamMembers = [
 ];
 
 const cardsContainer = document.getElementById("cards-container");
+const formElem = document.getElementById("form-new-member");
+const inputs = document.querySelectorAll("#form-new-member input");
+const [nameInput, roleInput, emailInput, imgInput] = inputs;
 
 // FUNZIONE
 
@@ -70,5 +73,30 @@ const printCards = (array) => {
     cardsContainer.innerHTML = memberCard;
 }
 
+// Funzione che aggiunge card nuovo membro 
+const handleSubmit = (event) => {
+    event.preventDefault(); 
+    const name = nameInput.value.trim();
+    const role = roleInput.value.trim();
+    const email = emailInput.value.trim();
+    const img = imgInput.value.trim();
+
+    const newMember = {
+        name,
+        role,
+        email,
+        img
+    }
+
+    teamMembers.push(newMember);
+    printCards(teamMembers);
+    formElem.reset(); 
+}
+
 // ESECUZIONE LOGICA
 printCards(teamMembers);
+
+// New Member Card
+
+formElem.addEventListener ("submit", handleSubmit);
+
